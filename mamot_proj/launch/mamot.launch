@@ -1,0 +1,8 @@
+<launch>   
+    <node name="start_ydlidar" pkg="myagv_odometry" type="start_ydlidar.sh" output="screen"/>
+    <include file="$(find myagv_odometry)/launch/myagv_active.launch"/>    
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+    <include file="$(find myagv_navigation)/launch/navigation_active.launch"/>
+    <node name="mamot_run" pkg="mamot" type="1210.py" output="screen"/>
+    <!-- <include file="$(find camera_tutorial)/launch/basic_camera.launch"/> -->
+</launch>

@@ -1,0 +1,6 @@
+<launch>   
+    <node name="start_ydlidar" pkg="myagv_odometry" type="start_ydlidar.sh" output="screen"/>
+    <include file="$(find myagv_odometry)/launch/myagv_active.launch"/>    
+    <node name="mamot_run" pkg="mamot" type="aruco_topic.py" output="screen"/>
+    <include file="$(find camera_tutorial)/launch/basic_camera.launch"/>
+</launch>
